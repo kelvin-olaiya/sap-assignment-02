@@ -77,3 +77,36 @@ An example is that, both **users** and **operators** can unlock e-scooters but, 
 Given that, the domain model should have two different entity, a `User` and a `Operator`, that can unlock an e-scooter, but with different constraints and different goals.
 
 ## Quality attribute scenarios
+
+```text
+Feature: Small Latency in the case of overload
+
+when initiate 50.000 requests in 2 minutes interval
+caused by 10.000 users
+occur in the system
+operating in normal operation
+then the system should be able to processes all requests
+so that the average latency < 5 seconds
+```
+
+```text
+Feature: Basic security between user payment and service granting
+
+When a user initiates a payment transaction to unlock an E-scooter,
+caused by a user request,
+occur in the payment processing component of the system,
+operating in a public network or an untrusted environment,
+then the system should ensure the confidentiality and integrity of payment data,
+so that financial transactions are protected from unauthorized access and fraud.
+```
+
+```text
+Feature: Usability of the mobile application E-scooter locator service
+
+When a user make a request for the nearest E-scooter,
+caused by accessing the location section in the application,
+occurring in the mobile application interface,
+operating in a low connection environment,
+then the mobile app should provide clear and precise information (at most 5 meters of error) about the location of the nearest E-scooters
+so that the user can find and rent an E-scooters without frustration, enhancing the overall user experience.
+```
